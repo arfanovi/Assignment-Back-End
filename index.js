@@ -3,11 +3,19 @@ const express = require('express');
 const app = express();
 const PORT = 3001
 
+const homeRoute = require('./src/routes/home');
 
 
-app.get("/run", (req, res)=>{
-    res.send("Okay")
-})
+
+// Use Route 
+app.use(homeRoute);
+
+
+
+
+
+
+
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on port is ${PORT}`)
